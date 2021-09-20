@@ -1,0 +1,34 @@
+/*ngegabungin 3 tabel dari tabel employee,departements,location*/
+select d.department_id, department_name,employee_id,first_name,Last_name, street_address,city from locations l
+join departments d on l.location_id = d.location_id
+join employees e on d.department_id = e.department_id
+order by l.location_id
+
+select coalesce(null,null,null,'a','b')
+
+select employee_id,first_name,salary,e.job_id,job_title,count(job_id)total_employees
+from employees e
+join jobs j on e.job_id= j.job_id
+group by e.job_id,job_title
+
+select * from jobs
+
+select case when e.job_id=5 then count(e.job_id) end programmer
+from employees e join jobs j on e.job_id=j.job_id
+group by e.job_id
+
+select sum(coalesce (programmer,0)programmer,
+sum(coalesce(accountan,0)
+	
+/*........*/
+select  employee_id,first_name,job_id,salary,
+	case when e.job_id=9 then salary * 2 
+		when e.job_id=6 then salary *1.5
+		else coalesce(salary, 0)
+	end bonus
+from employees e
+	
+select employee_id,first_name,job_id,salary,hire_date,
+	age(now(),hire_date) masa_kerja,
+	extract(year from age(now(),hire_date))masa_kerja_tahun
+from employees 

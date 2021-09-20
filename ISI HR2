@@ -1,0 +1,11 @@
+select * from employees
+
+update regions set region_name = ''
+where region_id = 3
+
+delete from regions where regon_id = 3
+
+select employees.employee_id, employees.frist_name, dependents.dependenst_id, dependents.relationship
+from employees
+right join dependents
+on employees.employee_id = dependents.employee_id
